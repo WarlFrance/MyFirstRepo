@@ -1,0 +1,333 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #26268b;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #f8e8e8;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: separate; /* Necessary for border-radius */
+    border-spacing: 0; /* Adjust spacing between cells */
+    border: 1.5px black; /* Outer table border */
+    border-radius: 15px; /* Rounded corners on the outer table */
+    background-color: #ffdbdb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+}
+
+/*No effects?*/
+th, td {
+    padding: 12px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid rgb(0, 0, 0);
+
+}
+
+/* Round the top-left and top-right corners of the first row (header) */
+th:first-child {
+    border-top-left-radius: 15px; /* Top-left corner */
+}
+th:last-child {
+    border-top-right-radius: 15px; /* Top-right corner */
+}
+
+/* Round the bottom-left and bottom-right corners of the last row */
+tr:last-child td:first-child {
+    border-bottom-left-radius: 15px; /* Bottom-left corner */
+}
+tr:last-child td:last-child {
+    border-bottom-right-radius: 15px; /* Bottom-right corner */
+}
+
+table, th, td {
+    border-spacing: 0;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    
+}
+
+td {
+    color: #555;
+   
+  
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+a {
+    color: #2196F3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.actions {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
+}
+
+
+td.actions {
+    padding-bottom: 0; /* Adjust bottom padding if necessary */
+    outline: none;
+    padding: 11px 0; /* Adjust padding to fit icons more tightly */
+    height: 60px; 
+    vertical-align: middle;
+    border: 1px solid black;
+    border-left: none;
+
+}
+
+
+.btn {
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    color: #333;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+/* Style for the Add Task Button */
+.add-task-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.add-task-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Centering the Add Task Button */
+.button-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    margin-bottom: 10px; 
+}
+
+/* Icon specific styling */
+.icon {
+    font-size: 24px;
+    color: #000000fa; /* Default color */
+    margin: 0;
+    transition: color 0.3s ease;
+    display: inline-block;
+    justify-content: space-around;
+    border: none; /* Ensure no border */
+    background: none;
+    padding: 0;
+}
+
+
+ 
+
+/* Hover effect for icons */
+.icon-done:hover{
+    color: rgb(21, 255, 0);
+}
+
+.icon-edit:hover {
+    color: black; /* Hover color for Edit icon */
+}
+
+.icon-delete:hover {
+    color: red; /* Hover color for Delete icon */
+}
+
+
+/* Styles for completed tasks */
+.completed {
+    color: rgb(0, 0, 0); /* Text color for completed tasks */
+}
+
+.completed-row {
+    background-color: rgb(151, 255, 151); /* Background color for completed tasks */
+    color: rgb(0, 0, 0); /* Text color for completed tasks */
+}
+
+/* Icon styles */
+.icon-done {
+    color: rgb(251, 6, 6); /* Default color for done icon */
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #abf7a4; /* White background */
+    margin: 20% auto; /* Center the modal */
+    padding: 20px; /* Padding inside the box */
+    border: 1px solid #004412;; /* Remove default border */
+    border-radius: 10px; /* Rounded corners */
+    width: 400px; /* Fixed width for a box appearance */
+    text-align: center; /* Centered text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    position: relative; /* Positioned within the modal */
+    font-size: 28px;
+}
+
+/* Style for the success message inside the modal */
+.modal-content #modalMessage {
+    font-size: 18px;
+    color: green;
+    font-weight: bold;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#okButton {
+    margin-top: 20px;
+    padding: 20px 30px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#okButton:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
+/* Style for the close button on the success message */
+.success-message .close {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+
+
+/* Design for Creating Task  */
+form {
+    background-color: #fff; /* White background for the form */
+    width: 60%; /* Set width for the form */
+    margin: 0 auto; /* Center the form */
+    padding: 20px; /* Padding around the form content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+label {
+    display: block; /* Block display for labels */
+    margin: 15px 0 5px; /* Spacing around labels */
+    color: #555; /* Dark gray color for labels */
+}
+
+input[type="text"],
+textarea,
+input[type="date"],
+select {
+    width: 100%; /* Full width */
+    padding: 12px; /* Padding inside inputs */
+    margin-bottom: 20px; /* Spacing below inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Ensure padding is included in width */
+    font-size: 16px; /* Font size */
+}
+
+input[type="submit"] {
+    display: inline-block;
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 12px; /* Padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease; /* Transition effect */
+}
+
+input[type="submit"]:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+textarea {
+    height: 100px; /* Fixed height for textarea */
+    resize: none; /* Disable resizing */
+}
+
+.container {
+    margin: 40px auto;
+    text-align: center;
+}
+
+.success-message {
+    background-color: #d4edda; /* Light green background */
+    border-color: #c3e6cb;
+    color: #155724; /* Dark green text */
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    width: 80%;
+    margin: 0 auto; /* Center the success message */
+    text-align: center; /* Center the success message */
+    font-size: 18px; /* Font size */
+}
+
+.error-message {
+    background-color: #f8d7da; /* Light red background */
+    border-color: #f5c6cb;
+    color: #721c24; /* Dark red text */
+    padding: 0;
+
+
+}
